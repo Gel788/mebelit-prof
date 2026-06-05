@@ -1,6 +1,19 @@
-import { categoryImages } from "./images";
+import { categoryImages, getCategoryImage } from "./images";
 
-export type SpaceId = keyof typeof categoryImages;
+export type SpaceId =
+  | "hairdressing"
+  | "cosmetology"
+  | "pedicure"
+  | "salon-turnkey"
+  | "design"
+  | "massage"
+  | "storage"
+  | "beauty"
+  | "reception"
+  | "medical"
+  | "office"
+  | "conference"
+  | "horeca";
 export type StyleId = "minimal" | "premium" | "classic" | "modern";
 export type PaletteId = "warm" | "neutral" | "dark" | "light";
 export type BudgetId = "start" | "business" | "premium";
@@ -102,9 +115,11 @@ export const configuratorBudgets: {
 ];
 
 /** Позиции мебели на 2D-плане (% от контейнера) */
-export const roomSlotLayouts: Record<
-  SpaceId,
-  { x: number; y: number; w: number; h: number; label: string }[]
+export const roomSlotLayouts: Partial<
+  Record<
+    SpaceId,
+    { x: number; y: number; w: number; h: number; label: string }[]
+  >
 > = {
   office: [
     { x: 8, y: 14, w: 34, h: 28, label: "Рабочее место" },
@@ -145,5 +160,5 @@ export const roomSlotLayouts: Record<
 };
 
 export function getSpaceImage(space: SpaceId): string {
-  return categoryImages[space];
+  return getCategoryImage(space);
 }

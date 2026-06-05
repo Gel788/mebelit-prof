@@ -3,15 +3,14 @@
 import Link from "next/link";
 import { AppImage } from "@/components/ui/AppImage";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { categoryImages } from "@/data/images";
 import { useRef } from "react";
 
 const stats = [
-  { value: "15+", label: "лет на рынке" },
+  { value: "15+", label: "лет опыта" },
   { value: "2000+", label: "проектов" },
-  { value: "500+", label: "салонов и клиник" },
+  { value: "500+", label: "салонов" },
 ];
 
 export function Hero() {
@@ -20,87 +19,107 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, 40]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.25]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   return (
     <section
       ref={ref}
-      className="relative min-h-[calc(100svh-4.25rem)] flex items-end sm:items-center overflow-hidden"
+      id="hero"
+      className="relative -mt-[4.25rem] min-h-[100svh] overflow-hidden flex items-end"
     >
-      <motion.div style={{ y: imageY }} className="absolute inset-0">
+      <motion.div style={{ scale }} className="absolute inset-0">
         <AppImage
-          src={categoryImages.beauty}
-          alt="Мебель и оборудование для бьюти-бизнеса"
+          src="/images/IMG_0014.JPG"
+          alt="Мебель для бьюти-бизнеса"
           fill
-          className="object-cover object-center"
+          className="object-cover"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/75 to-background/25 dark:from-background/95 dark:via-background/80 dark:to-background/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/20 dark:from-background/90" />
       </motion.div>
 
       <motion.div
-        style={{ y: contentY, opacity }}
-        className="relative z-10 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        style={{ y }}
+        className="relative z-10 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-10 sm:pb-14 lg:pb-16"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-2xl"
-        >
-          <p className="text-accent-600 dark:text-accent-400 text-xs font-semibold uppercase tracking-[0.28em] mb-4">
-            Для салонов, студий и клиник
-          </p>
+        <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8"
+          >
+            <Sparkles className="h-4 w-4 text-accent-400" />
+            <span className="text-xs font-bold uppercase tracking-widest text-white/90">
+              Premium · Beauty · Equipment
+            </span>
+          </motion.div>
 
-          <h1 className="font-display text-[clamp(2rem,5vw,3.25rem)] font-semibold text-foreground leading-[1.06] tracking-tight mb-5">
-            Мебель и оборудование{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-700 dark:from-accent-300 dark:to-accent-500">
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold text-white leading-[1.02] tracking-tight mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
+          >
+            Мебель и оборудование
+            <span className="block mt-1 text-white/95">
               для бьюти-бизнеса
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-base sm:text-lg text-muted leading-relaxed mb-8 max-w-xl">
-            Наши клиенты — салоны красоты, студии и клиники. Проектирование,
-            поставка и монтаж под ключ.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-lg sm:text-xl text-white/90 leading-relaxed mb-10 max-w-xl drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]"
+          >
+            Комплектуем салоны, студии и клиники под ключ — проектирование,
+            поставка и монтаж по всей России.
+          </motion.p>
 
-          <div className="flex flex-wrap gap-3 mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="flex flex-wrap gap-3 mb-12"
+          >
             <Link href="/catalog">
-              <Button size="lg" className="gap-2 min-w-[180px]">
+              <Button size="lg" className="gap-2 min-w-[200px] shadow-glow">
                 Смотреть каталог
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link href="/#services">
-              <Button variant="secondary" size="lg" className="gap-2">
+              <Button
+                variant="white"
+                size="lg"
+                className="min-w-[180px] bg-white/10 text-white border border-white/20 hover:bg-white/20 backdrop-blur-sm shadow-none"
+              >
                 Дизайн-проект
               </Button>
             </Link>
-          </div>
+          </motion.div>
+        </div>
 
-          <div className="flex flex-wrap gap-x-8 gap-y-4">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-2xl sm:text-3xl font-semibold text-foreground tabular-nums">
-                  {stat.value}
-                </p>
-                <p className="text-[11px] sm:text-xs text-muted-foreground uppercase tracking-wider mt-1">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="grid grid-cols-3 gap-3 sm:gap-4 max-w-2xl glass-light rounded-2xl p-4 sm:p-5"
+        >
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center sm:text-left sm:px-2">
+              <p className="text-2xl sm:text-3xl font-extrabold text-white tabular-nums">
+                {stat.value}
+              </p>
+              <p className="text-[11px] sm:text-xs font-medium text-white/75 mt-1">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </motion.div>
       </motion.div>
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-foreground/60 dark:text-muted-foreground">
-        <span className="text-[10px] uppercase tracking-[0.25em]">Листайте</span>
-        <ChevronDown className="h-4 w-4 animate-bounce" />
-      </div>
     </section>
   );
 }

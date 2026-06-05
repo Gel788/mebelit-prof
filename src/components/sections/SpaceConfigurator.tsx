@@ -47,12 +47,16 @@ import { formatPrice, cn } from "@/lib/utils";
 import {
   ArrowLeft,
   ArrowRight,
+  Archive,
   Briefcase,
   Building2,
   Check,
+  Footprints,
   HeartPulse,
+  PenTool,
   Presentation,
   RotateCcw,
+  Scissors,
   Sparkles,
   Sparkle,
   UtensilsCrossed,
@@ -65,9 +69,16 @@ import {
 type Phase = "intro" | "quiz" | "analyzing" | "result";
 type StepId = (typeof quizSteps)[number]["id"];
 
-const spaceIcons: Record<SpaceId, typeof Briefcase> = {
+const spaceIcons: Partial<Record<SpaceId, typeof Briefcase>> = {
   office: Briefcase,
   beauty: Sparkles,
+  hairdressing: Scissors,
+  cosmetology: Sparkles,
+  pedicure: Footprints,
+  "salon-turnkey": Building2,
+  design: PenTool,
+  massage: HeartPulse,
+  storage: Archive,
   reception: Building2,
   conference: Presentation,
   medical: HeartPulse,
@@ -183,7 +194,7 @@ function ResultBlueprint({
   palette: (typeof configuratorPalettes)[number];
   picks: Product[];
 }) {
-  const slots = roomSlotLayouts[space];
+  const slots = roomSlotLayouts[space] ?? [];
 
   return (
     <div

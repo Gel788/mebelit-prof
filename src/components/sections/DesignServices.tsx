@@ -2,89 +2,71 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { SectionAccentLine } from "@/components/ui/ElegantLines";
-import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
+import { AppImage } from "@/components/ui/AppImage";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, Layers, LayoutGrid, PenTool, Ruler } from "lucide-react";
+import { categoryImages } from "@/data/images";
 
 const services = [
-  {
-    icon: PenTool,
-    title: "Дизайн-проект салона",
-    description:
-      "Планировка зон, расстановка рабочих мест и потоков клиентов под ваш формат.",
-  },
-  {
-    icon: Layers,
-    title: "3D-визуализация",
-    description:
-      "Наглядная картина будущего пространства до заказа — бесплатно для клиентов.",
-  },
-  {
-    icon: LayoutGrid,
-    title: "Планировка кабинетов",
-    description:
-      "Клиники, кабинеты косметологии и процедурные — с учётом норм и эргономики.",
-  },
-  {
-    icon: Ruler,
-    title: "Подбор оборудования",
-    description:
-      "Комплектация под бюджет: мебель, свет, декор и профессиональная техника.",
-  },
+  { icon: PenTool, title: "Дизайн-проект салона", desc: "Планировка зон и рабочих мест." },
+  { icon: Layers, title: "3D-визуализация", desc: "Бесплатно для клиентов." },
+  { icon: LayoutGrid, title: "Планировка кабинетов", desc: "С учётом норм и эргономики." },
+  { icon: Ruler, title: "Подбор оборудования", desc: "Комплектация под бюджет." },
 ];
 
 export function DesignServices() {
   return (
-    <section
-      id="services"
-      className="relative overflow-hidden py-20 sm:py-28 bg-background"
-    >
-      <SectionAtmosphere variant="accent" />
-
-      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
-          <div className="max-w-2xl">
-            <SectionAccentLine />
-            <p className="text-accent-600 dark:text-accent-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">
-              Услуги
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground leading-tight mb-4">
-              Дизайн-проектирование
-            </h2>
-            <p className="text-muted leading-relaxed">
-              Проектируем салоны, студии и клиники — от эскиза до готового
-              пространства. Без лишней сложности: понятные этапы и фиксированные
-              сроки.
-            </p>
+    <section id="services" className="py-20 sm:py-28 bg-background overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14">
+          <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-premium">
+            <AppImage
+              src={categoryImages["salon-turnkey"]}
+              alt="Дизайн-проект"
+              fill
+              className="object-cover"
+              sizes="50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/50 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 glass-light rounded-2xl p-4 sm:p-5">
+              <p className="text-sm font-bold text-white">3D-визуализация</p>
+              <p className="text-xs text-white/65 mt-1">Бесплатно при заказе комплектации</p>
+            </div>
           </div>
-          <Link href="/#contacts" className="shrink-0">
-            <Button size="lg" className="gap-2">
-              Обсудить проект
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
+
+          <div>
+            <SectionHeader
+              label="Услуги"
+              title="Дизайн-проектирование"
+              description="От эскиза до готового пространства — понятные этапы и сроки."
+              action={
+                <Link href="/#contacts">
+                  <Button size="lg" className="gap-2 shadow-glow">
+                    Обсудить проект
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              }
+            />
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((service, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {services.map((s, i) => (
             <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={s.title}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="rounded-2xl border border-border bg-surface-card p-6 shadow-card hover:border-accent-500/25 hover:shadow-premium transition-all duration-500"
+              transition={{ delay: i * 0.08 }}
+              className="premium-card p-6 hover:-translate-y-1"
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-500/10 text-accent-600 dark:text-accent-400">
-                <service.icon className="h-5 w-5" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-glow mb-5">
+                <s.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {service.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
+              <h3 className="text-base font-bold text-foreground mb-2">{s.title}</h3>
+              <p className="text-sm text-muted leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>

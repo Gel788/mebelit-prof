@@ -30,6 +30,9 @@ const navLinks = [
   { href: "/#contacts", label: "Контакты", match: "#contacts" },
 ];
 
+const iconBtnClass =
+  "flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-foreground hover:bg-hover transition-all";
+
 function isLinkActive(pathname: string, href: string, match: string) {
   if (match.startsWith("#")) return false;
   if (match === "/catalog" && href === "/catalog") {
@@ -39,12 +42,23 @@ function isLinkActive(pathname: string, href: string, match: string) {
   return pathname.startsWith(match);
 }
 
+function navItemClass(active: boolean) {
+  return cn(
+    "px-4 py-2.5 text-sm font-semibold rounded-xl transition-colors",
+    active
+      ? "bg-accent-500/12 text-accent-800 dark:text-accent-300"
+      : "text-foreground hover:bg-hover"
+  );
+}
+
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
   const { cartCount, favoriteCount, openCart } = useShop();
   const { openSearch } = useSiteSearch();
+
+  const catalogActive = pathname === "/catalog" || pathname.startsWith("/product");
 
   useEffect(() => {
     setMobileOpen(false);
@@ -58,25 +72,23 @@ export function Header() {
     };
   }, [mobileOpen]);
 
-  const catalogActive = pathname === "/catalog" || pathname.startsWith("/product");
-
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-surface-card/95 backdrop-blur-xl shadow-header">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-surface-card">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-[4.25rem] items-center justify-between gap-4">
             <Link href="/" className="flex items-center gap-3 group shrink-0 min-w-0">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-700 shadow-glow transition-transform group-hover:scale-105">
-                <span className="font-display text-lg font-bold text-white">M</span>
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-700 shadow-glow transition-transform group-hover:scale-105">
+                <span className="text-lg font-bold text-white">M</span>
               </div>
               <div className="hidden min-w-0 sm:block">
-                <span className="block font-display text-sm lg:text-base font-semibold leading-tight text-foreground">
+                <span className="block text-sm lg:text-base font-bold leading-tight text-foreground">
                   Мебель для бьюти-бизнеса
                 </span>
               </div>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-1 rounded-2xl border border-border bg-surface-elevated/80 p-1">
+            <nav className="hidden lg:flex items-center gap-1 rounded-2xl border border-border bg-neutral-100/80 dark:bg-surface-elevated/80 p-1">
               <div
                 className="relative"
                 onMouseEnter={() => setCatalogOpen(true)}
@@ -87,7 +99,7 @@ export function Header() {
                     "flex items-center gap-1.5 px-4 py-2.5 text-sm font-semibold rounded-xl transition-colors",
                     catalogActive || catalogOpen
                       ? "bg-accent-500 text-white shadow-glow"
-                      : "text-foreground hover:bg-hover"
+                      : "text-foreground hover:bg-white/80 dark:hover:bg-hover"
                   )}
                 >
                   Каталог
@@ -114,7 +126,7 @@ export function Header() {
                             <Link
                               key={cat.id}
                               href={`/catalog?category=${cat.slug}`}
-                              className="group relative overflow-hidden rounded-xl aspect-[16/10] border border-border hover:border-brand-500/30 transition-all"
+                              className="group relative overflow-hidden rounded-xl aspect-[16/10] border border-border hover:border-accent-500/30 transition-all"
                             >
                               <AppImage
                                 src={cat.image}
@@ -125,10 +137,10 @@ export function Header() {
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                               <div className="absolute inset-x-0 bottom-0 p-3">
-                                <p className="text-sm font-semibold text-white group-hover:text-brand-200 transition-colors">
+                                <p className="text-sm font-semibold text-white">
                                   {cat.name}
                                 </p>
-                                <p className="text-[11px] text-white/60 mt-0.5">
+                                <p className="text-[11px] text-white/70 mt-0.5">
                                   {cat.productCount} товаров
                                 </p>
                               </div>
@@ -137,7 +149,7 @@ export function Header() {
                         </div>
                         <Link
                           href="/catalog"
-                          className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-brand-500/10 border border-brand-500/20 p-3 text-sm font-semibold text-brand-700 dark:text-brand-300 hover:bg-brand-500/15 transition-colors"
+                          className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-accent-500/10 border border-accent-500/20 p-3 text-sm font-semibold text-accent-800 dark:text-accent-300 hover:bg-accent-500/15 transition-colors"
                         >
                           Смотреть весь каталог
                           <ArrowRight className="h-4 w-4" />
@@ -154,12 +166,7 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={cn(
-                      "px-4 py-2.5 text-sm font-semibold rounded-xl transition-colors",
-                      active
-                        ? "bg-brand-500/10 text-brand-700 dark:text-brand-300"
-                        : "text-foreground hover:bg-hover"
-                    )}
+                    className={navItemClass(active)}
                   >
                     {link.label}
                   </Link>
@@ -168,21 +175,17 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <ThemeToggle className="border border-border bg-surface-elevated text-foreground hover:bg-hover" />
+              <ThemeToggle className={iconBtnClass} />
 
               <button
                 aria-label="Поиск"
                 onClick={openSearch}
-                className="hidden sm:flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-foreground hover:bg-hover transition-all"
+                className={cn("hidden sm:flex", iconBtnClass)}
               >
                 <Search className="h-5 w-5" />
               </button>
 
-              <Link
-                href="/favorites"
-                aria-label="Избранное"
-                className="relative hidden sm:flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-foreground hover:bg-hover transition-all"
-              >
+              <Link href="/favorites" aria-label="Избранное" className={cn("relative hidden sm:flex", iconBtnClass)}>
                 <Heart className="h-5 w-5" />
                 {favoriteCount > 0 && (
                   <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">
@@ -195,25 +198,25 @@ export function Header() {
                 id="cart-trigger"
                 aria-label="Корзина"
                 onClick={openCart}
-                className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-foreground hover:bg-hover transition-all"
+                className={cn("relative", iconBtnClass)}
               >
                 <ShoppingBag className="h-5 w-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[10px] font-bold text-white">
+                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent-500 text-[10px] font-bold text-white">
                     {cartCount}
                   </span>
                 )}
               </button>
 
               <Link href="/catalog" className="hidden md:flex">
-                <Button size="sm" className="gap-2 px-4">
+                <Button size="sm" className="gap-2 px-4 shadow-glow">
                   В каталог
                 </Button>
               </Link>
 
               <button
                 aria-label="Меню"
-                className="flex lg:hidden h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-foreground"
+                className={cn("flex lg:hidden", iconBtnClass)}
                 onClick={() => setMobileOpen(true)}
               >
                 <Menu className="h-5 w-5" />
@@ -241,12 +244,10 @@ export function Header() {
               className="fixed top-0 right-0 z-[80] flex h-full w-full max-w-sm flex-col bg-surface-card border-l border-border shadow-drawer lg:hidden"
             >
               <div className="flex items-center justify-between border-b border-border px-5 py-4">
-                <span className="font-display text-lg font-semibold text-foreground">
-                  Меню
-                </span>
+                <span className="text-lg font-semibold text-foreground">Меню</span>
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-foreground"
+                  className={iconBtnClass}
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -257,11 +258,11 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="flex items-center justify-between rounded-xl border border-border bg-surface-elevated px-4 py-3.5 text-base font-semibold text-foreground hover:border-brand-500/30 transition-colors"
+                    className="flex items-center justify-between rounded-xl border border-border bg-surface-elevated px-4 py-3.5 text-base font-semibold text-foreground hover:border-accent-500/30 transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
-                    <ArrowRight className="h-4 w-4 text-brand-500" />
+                    <ArrowRight className="h-4 w-4 text-accent-600" />
                   </Link>
                 ))}
 
@@ -273,7 +274,7 @@ export function Header() {
                     <Link
                       key={cat.id}
                       href={`/catalog?category=${cat.slug}`}
-                      className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-foreground bg-hover hover:bg-brand-500/10 transition-colors"
+                      className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-foreground bg-hover hover:bg-accent-500/10 transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {cat.name}
@@ -292,10 +293,10 @@ export function Header() {
                     setMobileOpen(false);
                     openSearch();
                   }}
-                  className="flex w-full items-center justify-between rounded-xl border border-border bg-surface-elevated px-4 py-3.5 text-base font-semibold text-foreground hover:border-brand-500/30 transition-colors"
+                  className="flex w-full items-center justify-between rounded-xl border border-border bg-surface-elevated px-4 py-3.5 text-base font-semibold text-foreground hover:border-accent-500/30 transition-colors"
                 >
                   Поиск
-                  <Search className="h-4 w-4 text-brand-500" />
+                  <Search className="h-4 w-4 text-accent-600" />
                 </button>
               </div>
 

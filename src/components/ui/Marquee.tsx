@@ -5,10 +5,8 @@ const items = [
   "Доставка по всей России",
   "Монтаж под ключ",
   "Гарантия до 10 лет",
-  "2000+ реализованных проектов",
-  "Ответ менеджера за 30 минут",
-  "Профессиональная мебель",
-  "Профессиональная мебель для бьюти-бизнеса",
+  "2000+ проектов",
+  "Ответ за 30 минут",
 ];
 
 export function Marquee() {
@@ -16,19 +14,16 @@ export function Marquee() {
 
   return (
     <section
-      className="relative overflow-hidden border-y border-border bg-surface-elevated/60 py-4 shadow-soft"
+      className="relative overflow-hidden bg-[var(--surface-dark)] py-4"
       aria-hidden
     >
-      <div className="absolute inset-y-0 left-0 z-10 w-16 sm:w-24 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 z-10 w-16 sm:w-24 bg-gradient-to-l from-background to-transparent pointer-events-none" />
-
-      <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+      <div className="flex w-max animate-marquee">
         {track.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="inline-flex items-center gap-4 px-6 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-muted whitespace-nowrap"
+            className="inline-flex items-center gap-6 px-8 text-sm font-semibold text-white/70 whitespace-nowrap"
           >
-            <span className="h-1 w-1 rotate-45 border border-brand-500/40 bg-brand-500/10" />
+            <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
             {item}
           </span>
         ))}
