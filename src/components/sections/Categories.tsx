@@ -30,12 +30,9 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const bentoLayout = [
-  "lg:col-span-6 lg:row-span-2",
-  "lg:col-span-3 lg:row-span-1",
-  "lg:col-span-3 lg:row-span-1",
-  "lg:col-span-4 lg:row-span-1",
-  "lg:col-span-4 lg:row-span-1",
-  "lg:col-span-4 lg:row-span-1",
+  "lg:col-span-7 lg:row-span-2",
+  "lg:col-span-5 lg:row-span-1",
+  "lg:col-span-5 lg:row-span-1",
 ] as const;
 
 interface CategoryCardProps {
@@ -159,16 +156,15 @@ export function Categories() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 sm:mb-12">
           <div className="max-w-2xl">
             <SectionAccentLine />
-            <p className="text-brand-600 dark:text-brand-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+            <p className="text-accent-600 dark:text-accent-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">
               Каталог
             </p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground leading-tight mb-4">
               Направления
             </h2>
             <p className="text-muted leading-relaxed text-base sm:text-lg">
-              Шесть профессиональных сегментов — от кабинета руководителя до
-              ресторана и медицинского кабинета. Подберём комплектацию под ваш
-              бизнес.
+              Салоны, студии и клиники — подберём мебель и оборудование под
+              ваш формат и бюджет.
             </p>
           </div>
 
@@ -180,7 +176,7 @@ export function Categories() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-2 gap-4 sm:gap-5 lg:gap-6 lg:min-h-[620px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-2 gap-4 sm:gap-5 lg:gap-6 lg:min-h-[520px]">
           {categories.map((category, index) => (
             <CategoryCard
               key={category.id}

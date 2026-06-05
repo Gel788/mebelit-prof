@@ -66,10 +66,8 @@ export function AmbientBackground() {
           }}
         />
 
-        <div className="absolute top-[18%] right-[8%] hidden lg:block">
-          <div className="h-40 w-40 rounded-full border border-brand-500/10 dark:border-brand-500/15" />
-          <div className="absolute top-1/2 left-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-500/[0.06] dark:border-brand-500/10" />
-          <div className="absolute top-1/2 left-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-brand-500/[0.05] dark:border-brand-500/[0.08]" />
+        <div className="absolute top-[18%] right-[8%] hidden lg:block opacity-40">
+          <div className="h-40 w-40 rounded-full border border-accent-500/10 dark:border-accent-500/15" />
         </div>
 
         <div className="absolute inset-x-0 bottom-0 h-[36vh] bg-gradient-to-t from-brand-500/[0.045] via-brand-500/[0.015] to-transparent dark:from-brand-500/[0.07] dark:via-brand-500/[0.02]" />

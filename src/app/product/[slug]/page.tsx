@@ -29,7 +29,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
         {relatedProducts.length > 0 && (
           <section className="border-t border-border pt-16">
-            <p className="text-brand-600 dark:text-brand-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+            <p className="text-accent-600 dark:text-accent-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">
               Рекомендуем
             </p>
             <h2 className="font-display text-2xl sm:text-3xl font-semibold text-foreground mb-8">

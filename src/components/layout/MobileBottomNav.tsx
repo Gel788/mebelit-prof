@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutGrid, Wand2, ShoppingBag, Phone } from "lucide-react";
+import { LayoutGrid, PenTool, ShoppingBag, Phone } from "lucide-react";
 import { useShop } from "@/store/ShopProvider";
 import { cn } from "@/lib/utils";
 
 const items = [
   { href: "/catalog", label: "Каталог", icon: LayoutGrid, match: "/catalog" },
-  { href: "/#configurator", label: "Квиз", icon: Wand2, match: "configurator" },
+  { href: "/#services", label: "Услуги", icon: PenTool, match: "services" },
   { href: "/#contacts", label: "Контакты", icon: Phone, match: "contacts" },
 ] as const;
 
@@ -19,9 +19,6 @@ export function MobileBottomNav() {
   const isActive = (match: string) => {
     if (match === "/catalog") {
       return pathname === "/catalog" || pathname.startsWith("/product");
-    }
-    if (match === "configurator") {
-      return pathname === "/" || pathname.includes("configurator");
     }
     return false;
   };
@@ -41,14 +38,14 @@ export function MobileBottomNav() {
               className={cn(
                 "flex flex-1 flex-col items-center gap-1 rounded-xl px-2 py-2 text-[10px] font-semibold transition-colors",
                 active
-                  ? "text-brand-600 dark:text-brand-400"
+                  ? "text-accent-600 dark:text-accent-400"
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
               <span
                 className={cn(
                   "flex h-9 w-9 items-center justify-center rounded-xl transition-colors",
-                  active && "bg-brand-500/10"
+                  active && "bg-accent-500/10"
                 )}
               >
                 <Icon className="h-5 w-5" />
@@ -67,7 +64,7 @@ export function MobileBottomNav() {
           <span className="relative flex h-9 w-9 items-center justify-center rounded-xl">
             <ShoppingBag className="h-5 w-5" />
             {cartCount > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-500 px-1 text-[9px] font-bold text-white">
+              <span className="absolute -top-0.5 -right-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent-500 px-1 text-[9px] font-bold text-white">
                 {cartCount > 9 ? "9+" : cartCount}
               </span>
             )}

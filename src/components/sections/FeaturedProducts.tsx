@@ -24,14 +24,14 @@ export function FeaturedProducts() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10">
           <div>
             <SectionAccentLine />
-            <p className="text-brand-600 dark:text-brand-400 text-xs font-medium uppercase tracking-[0.25em] mb-4">
+            <p className="text-accent-600 dark:text-accent-400 text-xs font-medium uppercase tracking-[0.25em] mb-4">
               Популярное
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground">
               Хиты продаж
             </h2>
             <p className="text-muted mt-3 max-w-md">
-              Лучшие решения для профессионального бизнеса
+              Лучшие решения для салонов, студий и клиник
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export function FeaturedProducts() {
         <div className="mt-12 text-center">
           <Link
             href="/catalog"
-            className="inline-flex items-center gap-2 text-sm text-muted hover:text-brand-600 dark:hover:text-brand-400 transition-colors group"
+            className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent-600 dark:hover:text-accent-400 transition-colors group"
           >
             Смотреть весь каталог
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

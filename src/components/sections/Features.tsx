@@ -52,15 +52,14 @@ export function Features() {
       <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <SectionAccentLine align="center" className="mb-5" />
-          <p className="text-brand-600 dark:text-brand-400 text-xs font-medium uppercase tracking-[0.25em] mb-4">
+          <p className="text-accent-600 dark:text-accent-400 text-xs font-medium uppercase tracking-[0.25em] mb-4">
             Преимущества
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-            Почему Mebelit Prof
+            Почему выбирают нас
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto leading-relaxed">
-            Полный цикл — от концепции до монтажа. Работаем с бизнесом любого
-            масштаба.
+            Полный цикл для бьюти-бизнеса — от дизайн-проекта до монтажа.
           </p>
         </div>
 

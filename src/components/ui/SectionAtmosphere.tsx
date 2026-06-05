@@ -66,19 +66,7 @@ export function SectionAtmosphere({
             "radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%)",
         }}
       />
-      <div
-        className={cn(
-          "absolute top-10 left-6 h-24 w-24 rounded-full border",
-          styles.ring
-        )}
-      />
-      <div
-        className={cn(
-          "absolute bottom-12 right-8 hidden sm:block h-32 w-32 rounded-full border border-dashed opacity-70",
-          styles.ring
-        )}
-      />
-      <div className="absolute top-1/2 left-1/2 h-px w-[min(90%,720px)] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-brand-500/15 to-transparent dark:via-brand-500/10" />
+      <div className="absolute top-1/2 left-1/2 h-px w-[min(90%,720px)] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-accent-500/12 to-transparent dark:via-accent-500/10" />
     </div>
   );
 }

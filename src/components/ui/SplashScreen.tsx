@@ -82,7 +82,7 @@ export function SplashScreen() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 shadow-glow"
+              className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-700 shadow-glow"
             >
               <span className="font-display text-2xl font-bold text-white">M</span>
             </motion.div>
@@ -94,9 +94,11 @@ export function SplashScreen() {
               className="mb-5 h-px w-24 origin-center bg-gradient-to-r from-transparent via-brand-500/60 to-transparent"
             />
 
-            <p className="font-display text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">
-              Mebelit{" "}
-              <span className="text-brand-600 dark:text-brand-400">Prof</span>
+            <p className="font-display text-2xl sm:text-3xl font-semibold text-foreground tracking-tight max-w-md">
+              Мебель и оборудование{" "}
+              <span className="text-accent-600 dark:text-accent-400">
+                для бьюти-бизнеса
+              </span>
             </p>
 
             <motion.p
@@ -105,7 +107,7 @@ export function SplashScreen() {
               transition={{ delay: 0.95, duration: 0.5 }}
               className="mt-3 text-[11px] font-semibold uppercase tracking-[0.35em] text-muted-foreground"
             >
-              Профессиональная мебель
+              Салоны · студии · клиники
             </motion.p>
 
             <motion.div

@@ -16,7 +16,7 @@ export function FilterChip({ href, active, children, count }: FilterChipProps) {
       className={cn(
         "inline-flex items-center gap-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300",
         active
-          ? "bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-glow"
+          ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-glow"
           : "bg-surface-card text-foreground border border-border hover:border-brand-500/35 hover:bg-brand-500/5"
       )}
     >

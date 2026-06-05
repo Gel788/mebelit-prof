@@ -12,7 +12,7 @@ export type CategorySlug = keyof typeof categoryImages;
 export const heroImage = "/images/hero.jpg";
 
 export function getCategoryImage(slug: string): string {
-  return categoryImages[slug as CategorySlug] ?? categoryImages.office;
+  return categoryImages[slug as CategorySlug] ?? categoryImages.beauty;
 }
 
 export function getProductImageBySlug(slug: string): string {

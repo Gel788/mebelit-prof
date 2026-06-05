@@ -97,7 +97,7 @@ function CatalogContent() {
           <PageHeader
             label="Каталог"
             title="Все товары"
-            description={`${totalProducts} позиций профессиональной мебели и оборудования`}
+            description={`${totalProducts} позиций для салонов, студий и клиник`}
           />
         )}
 
@@ -181,7 +181,7 @@ function CatalogContent() {
                       className={cn(
                         "flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
                         !categoryFilter && !filterType
-                          ? "bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-glow"
+                          ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-glow"
                           : "text-muted hover:text-foreground hover:bg-hover"
                       )}
                     >
@@ -203,7 +203,7 @@ function CatalogContent() {
                         className={cn(
                           "flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
                           categoryFilter === cat.slug
-                            ? "bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-glow"
+                            ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-glow"
                             : "text-muted hover:text-foreground hover:bg-hover"
                         )}
                       >
@@ -237,7 +237,7 @@ function CatalogContent() {
                         className={cn(
                           "block px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
                           filterType === filter.param
-                            ? "bg-brand-500/10 text-brand-700 dark:text-brand-300 border border-brand-500/25"
+                            ? "bg-accent-500/10 text-accent-700 dark:text-accent-300 border border-accent-500/25"
                             : "text-muted hover:text-foreground hover:bg-hover"
                         )}
                       >
@@ -269,11 +269,11 @@ function CatalogContent() {
                 <EmptyState
                   icon={<SearchX className="h-8 w-8" />}
                   title="Ничего не найдено"
-                  description="Попробуйте другую категорию, сбросьте фильтры или пройдите умный квиз — он подберёт решения под ваш бизнес."
+                  description="Попробуйте другую категорию или сбросьте фильтры — подберём решения для вашего салона или клиники."
                   actionLabel="Сбросить фильтры"
                   actionHref="/catalog"
-                  secondaryLabel="Пройти квиз"
-                  secondaryHref="/#configurator"
+                  secondaryLabel="Связаться с нами"
+                  secondaryHref="/#contacts"
                 />
               )}
             </motion.div>

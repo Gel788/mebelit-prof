@@ -25,7 +25,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { href: "/catalog", label: "Каталог", match: "/catalog" },
   { href: "/catalog?filter=new", label: "Новинки", match: "filter=new" },
-  { href: "/#configurator", label: "Умный квиз", match: "#configurator" },
+  { href: "/#services", label: "Услуги", match: "#services" },
   { href: "/#about", label: "О компании", match: "#about" },
   { href: "/#contacts", label: "Контакты", match: "#contacts" },
 ];
@@ -65,16 +65,13 @@ export function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-surface-card/95 backdrop-blur-xl shadow-header">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-[4.25rem] items-center justify-between gap-4">
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 shadow-glow transition-transform group-hover:scale-105">
+            <Link href="/" className="flex items-center gap-3 group shrink-0 min-w-0">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-700 shadow-glow transition-transform group-hover:scale-105">
                 <span className="font-display text-lg font-bold text-white">M</span>
               </div>
-              <div className="hidden sm:block">
-                <span className="font-display text-xl font-semibold tracking-tight text-foreground">
-                  Mebelit
-                </span>
-                <span className="ml-1 font-display text-xl font-semibold text-brand-600 dark:text-brand-400">
-                  Prof
+              <div className="hidden min-w-0 sm:block">
+                <span className="block font-display text-sm lg:text-base font-semibold leading-tight text-foreground">
+                  Мебель для бьюти-бизнеса
                 </span>
               </div>
             </Link>
@@ -89,7 +86,7 @@ export function Header() {
                   className={cn(
                     "flex items-center gap-1.5 px-4 py-2.5 text-sm font-semibold rounded-xl transition-colors",
                     catalogActive || catalogOpen
-                      ? "bg-brand-500 text-white shadow-glow"
+                      ? "bg-accent-500 text-white shadow-glow"
                       : "text-foreground hover:bg-hover"
                   )}
                 >

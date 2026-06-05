@@ -10,21 +10,21 @@ const testimonials = [
     name: "Анна Волкова",
     role: "Владелица салона красоты",
     city: "Москва",
-    text: "Заказывали полное оснащение салона — от кресел до ресепшн. Mebelit Prof сделали 3D-проект, всё привезли и собрали за 5 дней. Качество на высоте.",
-    rating: 5,
-  },
-  {
-    name: "Дмитрий Козлов",
-    role: "Директор по развитию",
-    city: "Санкт-Петербург",
-    text: "Обновляли офис на 80 человек. Персональный менеджер помог подобрать мебель под бюджет, доставка и монтаж — без задержек. Рекомендуем.",
+    text: "Заказывали полное оснащение салона — от кресел до ресепшн. Сделали 3D-проект, всё привезли и собрали за 5 дней. Качество на высоте.",
     rating: 5,
   },
   {
     name: "Елена Смирнова",
     role: "Управляющая клиникой",
     city: "Казань",
-    text: "Медицинская мебель с сертификатами, аккуратный монтаж, гарантийное обслуживание. Работаем уже второй год — всё отлично.",
+    text: "Медицинская мебель с сертификатами, аккуратный монтаж, гарантийное обслуживание. Оснащали кабинеты косметологии — всё отлично.",
+    rating: 5,
+  },
+  {
+    name: "Максим Орлов",
+    role: "Владелец барбершопа",
+    city: "Санкт-Петербург",
+    text: "Открывали студию с нуля. Помогли с планировкой и подбором оборудования под бюджет. Клиенты отмечают зону ожидания.",
     rating: 5,
   },
 ];
@@ -33,19 +33,19 @@ export function Testimonials() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-28 bg-background">
       <SectionAtmosphere variant="default" />
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-500/[0.04] via-transparent to-brand-500/[0.03] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-accent-500/[0.04] via-transparent to-accent-500/[0.03] pointer-events-none" />
 
       <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <SectionAccentLine align="center" className="mb-5" />
-          <p className="text-brand-600 dark:text-brand-400 text-sm font-medium uppercase tracking-widest mb-3">
+          <p className="text-accent-600 dark:text-accent-400 text-sm font-medium uppercase tracking-widest mb-3">
             Отзывы
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-            Нам доверяют профессионалы
+            Нам доверяют салоны, студии и клиники
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Реальные истории клиентов из разных отраслей
+            Реальные истории клиентов из бьюти-индустрии
           </p>
         </div>
 
@@ -57,10 +57,9 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative flex flex-col rounded-3xl border border-border bg-surface-card p-6 sm:p-7 shadow-card hover:border-brand-500/25 hover:shadow-premium transition-all duration-500"
+              className="relative flex flex-col rounded-3xl border border-border bg-surface-card p-6 sm:p-7 shadow-card hover:border-accent-500/25 hover:shadow-premium transition-all duration-500"
             >
-              <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent" />
-              <Quote className="h-8 w-8 text-brand-600/35 dark:text-brand-500/25 mb-4" />
+              <Quote className="h-8 w-8 text-accent-600/35 dark:text-accent-500/25 mb-4" />
               <p className="text-sm text-muted leading-relaxed flex-1 mb-6">
                 «{item.text}»
               </p>
@@ -68,7 +67,7 @@ export function Testimonials() {
                 {Array.from({ length: item.rating }).map((_, i) => (
                   <Star
                     key={i}
-                    className="h-3.5 w-3.5 fill-brand-500 text-brand-500"
+                    className="h-3.5 w-3.5 fill-accent-500 text-accent-500"
                   />
                 ))}
               </div>

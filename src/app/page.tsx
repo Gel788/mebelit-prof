@@ -4,9 +4,9 @@ import { ElegantDivider } from "@/components/ui/ElegantLines";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Categories } from "@/components/sections/Categories";
-import { SpaceConfigurator } from "@/components/sections/SpaceConfigurator";
 import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
-import { Projects } from "@/components/sections/Projects";
+import { ProjectsSlider } from "@/components/sections/ProjectsSlider";
+import { DesignServices } from "@/components/sections/DesignServices";
 import { Process } from "@/components/sections/Process";
 import { Features } from "@/components/sections/Features";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -25,12 +25,11 @@ export default function HomePage() {
           <ElegantDivider />
           <Categories />
           <ElegantDivider />
-          <SpaceConfigurator />
-          <Marquee />
-          <ElegantDivider />
           <FeaturedProducts />
           <ElegantDivider />
-          <Projects />
+          <ProjectsSlider />
+          <ElegantDivider />
+          <DesignServices />
           <ElegantDivider />
           <Process />
           <ElegantDivider />
