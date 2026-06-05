@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppImage } from "@/components/ui/AppImage";
@@ -14,6 +15,11 @@ import { ArrowRight, Star, X } from "lucide-react";
 export function QuickViewModal() {
   const { quickViewSlug, closeQuickView } = useShop();
   const product = quickViewSlug ? findProductBySlug(quickViewSlug) : null;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!quickViewSlug) return;
@@ -30,38 +36,47 @@ export function QuickViewModal() {
     };
   }, [quickViewSlug, closeQuickView]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {product && (
-        <>
-          <motion.div
+        <div
+          className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6"
+          role="presentation"
+        >
+          <motion.button
+            type="button"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[110] bg-background/75 backdrop-blur-md"
+            aria-label="Закрыть просмотр"
+            className="absolute inset-0 bg-background/75 backdrop-blur-md"
             onClick={closeQuickView}
           />
+
           <motion.div
-            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            initial={{ opacity: 0, y: 20, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 24, scale: 0.96 }}
+            exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed left-1/2 top-1/2 z-[115] w-[min(920px,calc(100vw-1.5rem))] max-h-[min(90vh,760px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-3xl border border-border bg-surface-card shadow-premium"
+            className="relative z-10 flex w-full max-w-[920px] max-h-[min(90vh,760px)] flex-col overflow-hidden rounded-3xl border border-border bg-surface-card shadow-premium"
             role="dialog"
             aria-modal="true"
             aria-label={`Быстрый просмотр: ${product.name}`}
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={closeQuickView}
-              className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-card/90 text-muted hover:text-foreground backdrop-blur-sm"
+              className="absolute top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-card/90 text-muted hover:text-foreground backdrop-blur-sm"
               aria-label="Закрыть"
             >
               <X className="h-5 w-5" />
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 max-h-[inherit] overflow-y-auto">
-              <div className="relative aspect-square md:aspect-auto md:min-h-[420px] bg-surface-elevated">
+            <div className="grid min-h-0 flex-1 grid-cols-1 overflow-y-auto md:grid-cols-2 md:overflow-hidden">
+              <div className="relative aspect-square shrink-0 bg-surface-elevated md:aspect-auto md:min-h-[420px]">
                 <AppImage
                   src={product.image}
                   alt={product.name}
@@ -72,7 +87,7 @@ export function QuickViewModal() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:hidden" />
               </div>
 
-              <div className="flex flex-col p-6 sm:p-8">
+              <div className="flex flex-col p-6 sm:p-8 md:overflow-y-auto">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-600 dark:text-brand-400 mb-2">
                   {product.category}
                 </p>
@@ -135,8 +150,9 @@ export function QuickViewModal() {
               </div>
             </div>
           </motion.div>
-        </>
+        </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
