@@ -35,7 +35,7 @@ export function TrustBar() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 rounded-2xl border border-border bg-surface-card/90 backdrop-blur-xl p-4 sm:p-5 shadow-premium"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 rounded-2xl border border-border/60 bg-surface-card/70 backdrop-blur-md p-4 sm:p-5 shadow-soft"
         >
           {items.map((item, index) => (
             <div
@@ -46,7 +46,7 @@ export function TrustBar() {
                   : ""
               }`}
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-500/10 text-accent-600 dark:text-accent-400">
                 <item.icon className="h-5 w-5" />
               </div>
               <div className="min-w-0">
