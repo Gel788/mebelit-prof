@@ -36,10 +36,10 @@ export function FavoriteButton({
         base,
         active
           ? variant === "card"
-            ? "bg-red-500 border-red-500 text-white shadow-sm"
+            ? "bg-red-500 border-red-500 text-white shadow-badge"
             : "bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/30"
           : variant === "card"
-            ? "bg-surface-card/90 border-border text-foreground hover:bg-red-500 hover:border-red-500 hover:text-white"
+            ? "bg-surface-card/90 border-border text-foreground shadow-soft hover:bg-red-500 hover:border-red-500 hover:text-white hover:shadow-badge"
             : "bg-surface-card border-border text-muted hover:text-foreground hover:border-brand-500/30",
         className
       )}

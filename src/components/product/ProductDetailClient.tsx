@@ -129,7 +129,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                 )}
               </div>
               {discount && (
-                <span className="px-3 py-1.5 rounded-xl bg-red-500 text-white text-sm font-bold shadow-sm">
+                <span className="px-3 py-1.5 rounded-xl bg-red-500 text-white text-sm font-bold shadow-badge">
                   −{discount}%
                 </span>
               )}

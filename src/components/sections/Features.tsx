@@ -79,7 +79,7 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.06 }}
-              className="group p-7 rounded-2xl bg-surface-card border border-border/80 hover:border-brand-500/20 transition-all duration-500"
+              className="group p-7 rounded-2xl bg-surface-card border border-border/80 shadow-card hover:border-brand-500/25 hover:shadow-premium transition-all duration-500"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 mb-5 group-hover:bg-brand-500/15 transition-colors">
                 <feature.icon className="h-5 w-5" />

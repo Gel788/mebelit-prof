@@ -62,7 +62,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-surface-card shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-surface-card/95 backdrop-blur-xl shadow-header">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-[4.25rem] items-center justify-between gap-4">
             <Link href="/" className="flex items-center gap-3 group shrink-0">
@@ -241,7 +241,7 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 280 }}
-              className="fixed top-0 right-0 z-[80] flex h-full w-full max-w-sm flex-col bg-surface-card border-l border-border shadow-2xl lg:hidden"
+              className="fixed top-0 right-0 z-[80] flex h-full w-full max-w-sm flex-col bg-surface-card border-l border-border shadow-drawer lg:hidden"
             >
               <div className="flex items-center justify-between border-b border-border px-5 py-4">
                 <span className="font-display text-lg font-semibold text-foreground">

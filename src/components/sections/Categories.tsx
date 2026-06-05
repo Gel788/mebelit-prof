@@ -100,7 +100,7 @@ function CategoryCard({
 
         <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
           <div className="flex items-start justify-between gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-surface-card/80 text-brand-600 dark:text-brand-400 backdrop-blur-md shadow-sm">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-surface-card/80 text-brand-600 dark:text-brand-400 backdrop-blur-md shadow-soft">
               <Icon className="h-5 w-5" />
             </div>
             <span className="font-display text-sm text-muted-foreground tabular-nums">
@@ -111,7 +111,7 @@ function CategoryCard({
           <div className="mt-auto">
             <div
               className={cn(
-                "rounded-2xl border border-border/70 bg-surface-card/85 backdrop-blur-xl p-4 sm:p-5 shadow-sm transition-all duration-500 group-hover:bg-surface-card/95 group-hover:border-brand-500/20",
+                "rounded-2xl border border-border/70 bg-surface-card/85 backdrop-blur-xl p-4 sm:p-5 shadow-soft transition-all duration-500 group-hover:bg-surface-card/95 group-hover:border-brand-500/20 group-hover:shadow-card",
                 featured && "sm:p-6"
               )}
             >

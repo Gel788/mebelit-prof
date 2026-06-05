@@ -41,9 +41,14 @@ const config: Config = {
         display: ["var(--font-playfair)", "Georgia", "serif"],
       },
       boxShadow: {
-        premium: "var(--shadow-premium)",
-        glow: "var(--shadow-glow)",
+        soft: "var(--shadow-soft)",
         card: "var(--shadow-card)",
+        premium: "var(--shadow-premium)",
+        float: "var(--shadow-float)",
+        glow: "var(--shadow-glow)",
+        header: "var(--shadow-header)",
+        drawer: "var(--shadow-drawer)",
+        badge: "var(--shadow-badge)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

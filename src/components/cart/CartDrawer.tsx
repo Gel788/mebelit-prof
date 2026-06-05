@@ -36,7 +36,7 @@ export function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 28, stiffness: 280 }}
-            className="fixed top-0 right-0 z-[70] flex h-full w-full max-w-md flex-col border-l border-border bg-surface-card shadow-2xl"
+            className="fixed top-0 right-0 z-[70] flex h-full w-full max-w-md flex-col border-l border-border bg-surface-card shadow-drawer"
           >
             <div className="flex items-center justify-between border-b border-border px-5 py-4">
               <div className="flex items-center gap-2">
@@ -72,7 +72,7 @@ export function CartDrawer() {
                   {cart.map((item) => (
                     <li
                       key={item.productId}
-                      className="flex gap-3 rounded-2xl border border-border bg-surface-elevated p-3 shadow-sm"
+                      className="flex gap-3 rounded-2xl border border-border bg-surface-elevated p-3 shadow-soft"
                     >
                       <Link
                         href={`/product/${item.slug}`}

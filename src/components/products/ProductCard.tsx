@@ -69,7 +69,7 @@ export function ProductCard({
             {product.badge && (
               <span
                 className={cn(
-                  "px-2.5 py-1 rounded-lg text-[11px] font-semibold uppercase tracking-wider backdrop-blur-sm",
+                  "px-2.5 py-1 rounded-lg text-[11px] font-semibold uppercase tracking-wider backdrop-blur-sm shadow-badge",
                   badgeColors[product.badge]
                 )}
               >
@@ -77,7 +77,7 @@ export function ProductCard({
               </span>
             )}
             {discount && (
-              <span className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-red-500 text-white shadow-sm">
+              <span className="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-red-500 text-white shadow-badge">
                 −{discount}%
               </span>
             )}
@@ -98,7 +98,7 @@ export function ProductCard({
                 e.stopPropagation();
                 openQuickView(product.slug);
               }}
-              className="flex h-9 w-9 items-center justify-center rounded-xl bg-surface-card/90 border border-border text-foreground backdrop-blur-sm hover:bg-brand-500 hover:text-white hover:border-brand-500 transition-all"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-surface-card/90 border border-border text-foreground backdrop-blur-sm shadow-soft hover:bg-brand-500 hover:text-white hover:border-brand-500 hover:shadow-glow transition-all"
             >
               <Eye className="h-4 w-4" />
             </button>

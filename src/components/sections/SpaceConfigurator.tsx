@@ -136,7 +136,7 @@ function OptionCard({
         image ? "min-h-[120px]" : "p-4",
         active
           ? "border-brand-500 bg-brand-500/10 shadow-glow ring-2 ring-brand-500/20"
-          : "border-border bg-surface-elevated hover:border-brand-500/35 hover:shadow-sm"
+          : "border-border bg-surface-elevated hover:border-brand-500/35 hover:shadow-soft"
       )}
     >
       {image && (
@@ -214,7 +214,7 @@ function ResultBlueprint({
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.15 + i * 0.08 }}
-              className="absolute overflow-hidden rounded-xl border bg-surface-card/95 shadow-sm"
+              className="absolute overflow-hidden rounded-xl border bg-surface-card/95 shadow-soft"
               style={{
                 left: `${slot.x}%`,
                 top: `${slot.y}%`,

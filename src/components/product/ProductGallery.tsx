@@ -78,7 +78,7 @@ export function ProductGallery({ images, name, badge }: ProductGalleryProps) {
           {badge && (
             <span
               className={cn(
-                "absolute top-4 left-4 px-3 py-1.5 rounded-xl text-[11px] font-semibold uppercase tracking-wider z-10 shadow-sm",
+                "absolute top-4 left-4 px-3 py-1.5 rounded-xl text-[11px] font-semibold uppercase tracking-wider z-10 shadow-badge",
                 badgeColors[badge]
               )}
             >

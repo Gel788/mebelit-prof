@@ -69,7 +69,7 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group rounded-2xl border border-border bg-surface-card p-6 hover:border-brand-500/30 hover:shadow-premium transition-all duration-500"
+              className="relative group rounded-2xl border border-border bg-surface-card p-6 shadow-card hover:border-brand-500/30 hover:shadow-premium transition-all duration-500"
             >
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-10 -right-3 w-6 h-px bg-border z-10" />

@@ -39,7 +39,7 @@ export function FeaturedProducts() {
             {highlights.map((item) => (
               <div
                 key={item.label}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-card border border-border text-sm text-muted"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-card border border-border text-sm text-muted shadow-soft"
               >
                 <item.icon className="h-4 w-4 text-brand-500" />
                 {item.label}
