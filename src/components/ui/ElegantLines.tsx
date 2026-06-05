@@ -101,7 +101,7 @@ export function ElegantPageLines() {
               initial={{ scaleY: 0, opacity: 0 }}
               animate={{ scaleY: 1, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.2 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute top-0 h-full w-px origin-top bg-gradient-to-b from-brand-500/[0.07] via-border/40 to-transparent"
+              className="absolute top-0 h-full w-px origin-top bg-gradient-to-b from-brand-500/[0.1] via-border/50 to-transparent"
               style={{ left: `${left}%` }}
             />
           ))}
@@ -112,7 +112,7 @@ export function ElegantPageLines() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.5 }}
-        className="absolute inset-0 opacity-[0.35] dark:opacity-[0.2]"
+        className="absolute inset-0 opacity-[0.45] dark:opacity-[0.28]"
         style={{
           backgroundImage: `
             linear-gradient(to right, transparent 0%, transparent calc(50% - 0.5px), var(--border) calc(50% - 0.5px), var(--border) calc(50% + 0.5px), transparent calc(50% + 0.5px)),

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionAccentLine } from "@/components/ui/ElegantLines";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { Quote, Star } from "lucide-react";
 
 const testimonials = [
@@ -30,10 +31,11 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 sm:py-28 relative overflow-hidden bg-background">
+    <section className="relative overflow-hidden py-20 sm:py-28 bg-background">
+      <SectionAtmosphere variant="default" />
       <div className="absolute inset-0 bg-gradient-to-b from-brand-500/[0.04] via-transparent to-brand-500/[0.03] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <SectionAccentLine align="center" className="mb-5" />
           <p className="text-brand-600 dark:text-brand-400 text-sm font-medium uppercase tracking-widest mb-3">

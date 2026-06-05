@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ScrollProgress, GrainOverlay } from "@/components/ui/ScrollProgress";
+import { AmbientBackground } from "@/components/ui/AmbientBackground";
 import { ConsultButton } from "@/components/ui/ConsultButton";
 import { CommandSearch, useCommandSearch } from "@/components/ui/CommandSearch";
 import { QuickViewModal } from "@/components/ui/QuickViewModal";
@@ -37,6 +38,7 @@ export function SiteEnhancements({ children }: { children: ReactNode }) {
 
   return (
     <SearchContext.Provider value={{ openSearch }}>
+      <AmbientBackground />
       {children}
       <ScrollToTop />
       <ScrollProgress />

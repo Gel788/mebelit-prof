@@ -36,7 +36,7 @@ export default function RootLayout({
           <ShopProvider>
             <SiteEnhancements>
               <Header />
-              <main className="flex-1 pt-[4.25rem] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
+              <main className="relative z-[1] flex-1 pt-[4.25rem] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
                 {children}
               </main>
               <Footer />

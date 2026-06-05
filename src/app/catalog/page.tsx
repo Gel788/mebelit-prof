@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { FilterChip } from "@/components/ui/FilterChip";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { ProductGrid } from "@/components/products/ProductGrid";
 import { getCatalogProducts, getCategoryProductCount } from "@/data/catalog";
 import { categories } from "@/data/categories";
@@ -65,7 +66,9 @@ function CatalogContent() {
         : "товаров";
 
   return (
-    <div className="pb-20">
+    <div className="relative overflow-hidden pb-20">
+      <SectionAtmosphere variant="default" />
+      <div className="relative z-[1]">
       {activeCategory && (
         <div className="relative h-36 sm:h-44 mb-8 overflow-hidden rounded-2xl border border-border mx-4 sm:mx-6 lg:mx-8 max-w-7xl lg:mx-auto">
           <AppImage
@@ -276,6 +279,7 @@ function CatalogContent() {
             </motion.div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AppImage } from "@/components/ui/AppImage";
 import { Button } from "@/components/ui/Button";
 import { SectionAccentLine } from "@/components/ui/ElegantLines";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { AddToCartButton } from "@/components/cart/AddToCartButton";
 import {
@@ -487,8 +488,9 @@ export function SpaceConfigurator() {
   };
 
   return (
-    <section id="configurator" className="py-16 sm:py-24 lg:py-28 bg-background overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="configurator" className="relative py-16 sm:py-24 lg:py-28 bg-background overflow-hidden">
+      <SectionAtmosphere variant="accent" />
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
           <SectionAccentLine align="center" className="mb-5" />
           <p className="text-brand-600 dark:text-brand-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">

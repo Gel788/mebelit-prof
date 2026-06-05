@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppImage } from "@/components/ui/AppImage";
 import { Button } from "@/components/ui/Button";
 import { SectionAccentLine } from "@/components/ui/ElegantLines";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -152,8 +153,9 @@ function CategoryCard({
 
 export function Categories() {
   return (
-    <section id="directions" className="py-16 sm:py-24 lg:py-28 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="directions" className="relative overflow-hidden py-16 sm:py-24 lg:py-28 bg-background">
+      <SectionAtmosphere variant="warm" />
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 sm:mb-12">
           <div className="max-w-2xl">
             <SectionAccentLine />

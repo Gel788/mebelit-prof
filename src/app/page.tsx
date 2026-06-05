@@ -1,6 +1,6 @@
 import { SplashScreen } from "@/components/ui/SplashScreen";
 import { Marquee } from "@/components/ui/Marquee";
-import { ElegantDivider, ElegantPageLines } from "@/components/ui/ElegantLines";
+import { ElegantDivider } from "@/components/ui/ElegantLines";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Categories } from "@/components/sections/Categories";
@@ -18,8 +18,6 @@ export default function HomePage() {
       <SplashScreen />
 
       <div className="relative">
-        <ElegantPageLines />
-
         <div className="relative z-[1]">
           <Hero />
           <TrustBar />

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionAccentLine } from "@/components/ui/ElegantLines";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import {
   Truck,
   Shield,
@@ -46,8 +47,9 @@ const features = [
 
 export function Features() {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-surface-elevated/50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative overflow-hidden py-24 sm:py-32 bg-surface-elevated/50">
+      <SectionAtmosphere variant="elevated" />
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <SectionAccentLine align="center" className="mb-5" />
           <p className="text-brand-600 dark:text-brand-400 text-xs font-medium uppercase tracking-[0.25em] mb-4">

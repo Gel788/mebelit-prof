@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Truck, Shield, Ruler } from "lucide-react";
 import { SectionAccentLine } from "@/components/ui/ElegantLines";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { ProductGrid } from "@/components/products/ProductGrid";
 import { getFeaturedProducts } from "@/data/catalog";
 
@@ -17,8 +18,9 @@ export function FeaturedProducts() {
   const products = getFeaturedProducts();
 
   return (
-    <section className="py-20 sm:py-28 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-20 sm:py-28 bg-background">
+      <SectionAtmosphere variant="default" />
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10">
           <div>
             <SectionAccentLine />

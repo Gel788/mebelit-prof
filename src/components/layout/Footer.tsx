@@ -26,8 +26,16 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer id="contacts" className="border-t border-border bg-surface-elevated">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer id="contacts" className="relative overflow-hidden border-t border-border bg-surface-elevated">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-500/25 to-transparent"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -top-32 right-0 h-64 w-64 rounded-full blur-[100px] bg-brand-500/8 dark:bg-brand-500/12"
+        aria-hidden
+      />
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">

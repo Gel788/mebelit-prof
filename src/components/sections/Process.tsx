@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare, Ruler, Truck, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 
 const steps = [
   {
@@ -34,10 +35,11 @@ const steps = [
 
 export function Process() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="relative overflow-hidden py-24">
+      <SectionAtmosphere variant="warm" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-50/30 to-transparent dark:via-brand-950/20 pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <div className="max-w-xl">
             <p className="text-brand-600 dark:text-brand-400 text-sm font-medium uppercase tracking-widest mb-3">

@@ -4,13 +4,15 @@ import Link from "next/link";
 import { AppImage } from "@/components/ui/AppImage";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { Phone, Mail, ArrowRight } from "lucide-react";
 import { categoryImages } from "@/data/images";
 
 export function CTA() {
   return (
-    <section className="py-20 sm:py-28 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-20 sm:py-28 bg-background">
+      <SectionAtmosphere variant="accent" />
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

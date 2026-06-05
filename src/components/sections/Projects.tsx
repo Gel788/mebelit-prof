@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { AppImage } from "@/components/ui/AppImage";
 import { SectionAccentLine } from "@/components/ui/ElegantLines";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -45,8 +46,9 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 sm:py-28 bg-surface-elevated/40">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="relative overflow-hidden py-20 sm:py-28 bg-surface-elevated/40">
+      <SectionAtmosphere variant="elevated" />
+      <div className="relative z-[1] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 sm:mb-12">
           <div className="max-w-2xl">
             <SectionAccentLine />
