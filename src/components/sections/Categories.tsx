@@ -102,7 +102,7 @@ function CategoryCard({
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-surface-card/80 text-brand-600 dark:text-brand-400 backdrop-blur-md shadow-sm">
               <Icon className="h-5 w-5" />
             </div>
-            <span className="font-display text-sm text-muted-foreground/80 tabular-nums">
+            <span className="font-display text-sm text-muted-foreground tabular-nums">
               {String(index + 1).padStart(2, "0")}
             </span>
           </div>

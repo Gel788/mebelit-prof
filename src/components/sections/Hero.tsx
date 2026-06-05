@@ -102,7 +102,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-muted-foreground">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-foreground/60 dark:text-muted-foreground">
         <span className="text-[10px] uppercase tracking-[0.25em]">Листайте</span>
         <ChevronDown className="h-4 w-4 animate-bounce" />
       </div>

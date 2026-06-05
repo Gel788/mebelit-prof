@@ -98,7 +98,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                     "h-4 w-4",
                     i < Math.floor(product.rating)
                       ? "fill-brand-500 text-brand-500"
-                      : "text-zinc-300 dark:text-zinc-700"
+                      : "text-zinc-400 dark:text-zinc-600"
                   )}
                 />
               ))}

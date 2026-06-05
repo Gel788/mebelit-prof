@@ -127,10 +127,10 @@ export function Footer() {
             © 2026 Mebelit Prof. Все права защищены.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-xs text-muted-foreground hover:text-muted transition-colors">
+            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Политика конфиденциальности
             </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-muted transition-colors">
+            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Оферта
             </Link>
           </div>

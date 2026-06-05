@@ -155,7 +155,7 @@ function CatalogContent() {
               </FilterChip>
             )}
             <Link href="/catalog">
-              <Button variant="ghost" size="sm" className="gap-1.5 text-muted">
+              <Button variant="ghost" size="sm" className="gap-1.5">
                 <X className="h-3.5 w-3.5" />
                 Сбросить
               </Button>
@@ -183,7 +183,14 @@ function CatalogContent() {
                       )}
                     >
                       Все товары
-                      <span className="text-xs opacity-80">{totalProducts}</span>
+                      <span
+                        className={cn(
+                          "text-xs tabular-nums",
+                          !categoryFilter && !filterType ? "text-white/80" : "text-muted-foreground"
+                        )}
+                      >
+                        {totalProducts}
+                      </span>
                     </Link>
                   </li>
                   {categories.map((cat) => (
@@ -198,7 +205,14 @@ function CatalogContent() {
                         )}
                       >
                         {cat.name}
-                        <span className="text-xs opacity-80">
+                        <span
+                          className={cn(
+                            "text-xs tabular-nums",
+                            categoryFilter === cat.slug
+                              ? "text-white/80"
+                              : "text-muted-foreground"
+                          )}
+                        >
                           {getCategoryProductCount(cat.slug)}
                         </span>
                       </Link>

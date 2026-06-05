@@ -26,7 +26,7 @@ export function Marquee() {
         {track.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="inline-flex items-center gap-4 px-6 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground whitespace-nowrap"
+            className="inline-flex items-center gap-4 px-6 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-muted whitespace-nowrap"
           >
             <span className="h-1 w-1 rotate-45 border border-brand-500/40 bg-brand-500/10" />
             {item}

@@ -58,7 +58,7 @@ export function Testimonials() {
               className="relative flex flex-col rounded-3xl border border-border bg-surface-card p-6 sm:p-7 shadow-card hover:border-brand-500/25 hover:shadow-premium transition-all duration-500"
             >
               <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent" />
-              <Quote className="h-8 w-8 text-brand-500/25 mb-4" />
+              <Quote className="h-8 w-8 text-brand-600/35 dark:text-brand-500/25 mb-4" />
               <p className="text-sm text-muted leading-relaxed flex-1 mb-6">
                 «{item.text}»
               </p>

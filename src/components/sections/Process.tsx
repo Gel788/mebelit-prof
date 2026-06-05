@@ -76,7 +76,7 @@ export function Process() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 group-hover:bg-brand-500/20 transition-colors">
                   <item.icon className="h-5 w-5" />
                 </div>
-                <span className="font-display text-3xl font-semibold text-brand-500/20 group-hover:text-brand-500/40 transition-colors">
+                <span className="font-display text-3xl font-semibold text-brand-600/30 dark:text-brand-500/20 group-hover:text-brand-600/50 dark:group-hover:text-brand-500/40 transition-colors">
                   {item.step}
                 </span>
               </div>
