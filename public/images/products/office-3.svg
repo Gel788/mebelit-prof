@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" fill="none">
+  <rect width="800" height="1000" fill="#111113"/>
+  <rect x="40" y="40" width="720" height="920" rx="24" fill="#161618" stroke="#9a7858" stroke-opacity="0.3"/>
+  <rect x="120" y="200" width="560" height="320" rx="12" fill="#27272a"/>
+  <rect x="160" y="240" width="200" height="12" rx="6" fill="#9a7858" fill-opacity="0.6"/>
+  <rect x="160" y="270" width="320" height="8" rx="4" fill="#3f3f46"/>
+  <rect x="160" y="290" width="280" height="8" rx="4" fill="#3f3f46"/>
+  <rect x="200" y="580" width="400" height="280" rx="16" fill="#1f1f23" stroke="#9a7858" stroke-opacity="0.2"/>
+  <circle cx="400" cy="420" r="60" fill="#9a7858" fill-opacity="0.15"/>
+  <text x="400" y="880" text-anchor="middle" fill="#71717a" font-family="system-ui,sans-serif" font-size="18">Mebelit Prof</text>
+</svg>

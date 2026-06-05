@@ -1,0 +1,37 @@
+{
+  "name": "mebelit-prof",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "images:download": "node scripts/download-images.mjs",
+    "images:yandex": "node scripts/download-yandex-images.mjs",
+    "images:generate": "node scripts/generate-images.mjs",
+    "images:fix": "node scripts/fix-product-images.mjs"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.15.0",
+    "lucide-react": "^0.511.0",
+    "next": "^14.2.28",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.28",
+    "postcss": "^8.5.4",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3"
+  }
+}

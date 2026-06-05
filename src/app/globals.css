@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --background: #faf8f5;
+    --foreground: #141414;
+    --muted: #5a5a62;
+    --muted-foreground: #73737c;
+    --border: #e8e4de;
+    --hover: rgba(20, 20, 20, 0.04);
+    --surface: #faf8f5;
+    --surface-elevated: #ffffff;
+    --surface-card: #ffffff;
+    --shadow-premium: 0 1px 2px rgba(20, 20, 20, 0.04), 0 12px 32px rgba(20, 20, 20, 0.07);
+    --shadow-glow: 0 0 32px rgba(154, 120, 88, 0.16);
+    --shadow-card: 0 8px 28px rgba(20, 20, 20, 0.06);
+    --hero-glow: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(154, 120, 88, 0.14),
+      transparent
+    );
+    --card-shine: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      transparent 55%,
+      transparent 100%
+    );
+    --photo-overlay: linear-gradient(
+      to top,
+      rgba(250, 248, 245, 0.96) 0%,
+      rgba(250, 248, 245, 0.45) 45%,
+      transparent 100%
+    );
+  }
+
+  html.dark {
+    color-scheme: dark;
+    --background: #0c0c0e;
+    --foreground: #f5f5f4;
+    --muted: #a1a1aa;
+    --muted-foreground: #71717a;
+    --border: rgba(255, 255, 255, 0.1);
+    --hover: rgba(255, 255, 255, 0.06);
+    --surface: #0c0c0e;
+    --surface-elevated: #141416;
+    --surface-card: #1a1a1e;
+    --shadow-premium: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 8px 32px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 40px rgba(154, 120, 88, 0.22);
+    --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.4);
+    --hero-glow: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(154, 120, 88, 0.24),
+      transparent
+    );
+    --card-shine: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      transparent 55%,
+      transparent 100%
+    );
+    --photo-overlay: linear-gradient(
+      to top,
+      rgba(12, 12, 14, 0.92) 0%,
+      rgba(12, 12, 14, 0.4) 50%,
+      transparent 100%
+    );
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans transition-[background-color,color] duration-300;
+  }
+
+  ::selection {
+    @apply bg-brand-500/30 text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c9c4bc;
+    border-radius: 9999px;
+  }
+
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .photo-overlay {
+    background: var(--photo-overlay);
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .configurator-grid {
+    background-image:
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
